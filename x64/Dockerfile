@@ -2,10 +2,11 @@ FROM circleci/build-image:ubuntu-14.04-XL-783-8f4b56f
 
 WORKDIR ~
 
-RUN ls && \
-    sudo apt-get update && apt-get install -y wget binutils gcc && \
+RUN pwd && \
+    ls -lta && \
+    sudo apt-get update && apt-get sudo nstall -y wget binutils gcc && \
     wget -q -O fpc_3.0.0-151205_amd64.deb 'http://downloads.sourceforge.net/project/lazarus/Lazarus%20Linux%20amd64%20DEB/Lazarus%201.6.2/fpc_3.0.0-151205_amd64.deb?r=https%3A%2F%2Fsourceforge.net%2Fprojects%2Flazarus%2Ffiles%2FLazarus%2520Linux%2520amd64%2520DEB%2FLazarus%25201.6.2%2F&ts=1483204950&use_mirror=superb-sea2' && \
-    dpkg -i fpc_3.0.0-151205_amd64.deb && \
+    sudo dpkg -i fpc_3.0.0-151205_amd64.deb && \
     rm fpc_3.0.0-151205_amd64.deb && \
     fpc -i
 
