@@ -3,7 +3,7 @@ steps:
   BuildingDockerImage:
     title: Building Docker Image
     type: build
-    image_name: markfirmware/ufpc
+    image_name: markfirmware/ufpc-2
     working_directory: ./x64
     dockerfile: Dockerfile
   PushingToDockerRegistry:
